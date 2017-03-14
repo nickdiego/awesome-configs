@@ -11,7 +11,7 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
-local cyclefocus = require("cyclefocus")
+local cyclefocus = require("widgets.cyclefocus")
 cyclefocus.display_notifications = false
 
 -- {{{ Error handling
@@ -205,9 +205,9 @@ awful.screen.connect_for_each_screen(function(s)
     -- Widgets the use theme stuff are instantiated
     -- here because this function is called async as
     -- for version >= 4.0
-    require("kbdcfg")
-    require("volume")
-    require("battery")
+    require("widgets.kbdcfg")
+    require("widgets.volume")
+    require("widgets.battery")
 
     -- Add widgets to the wibox
     s.mywibox:setup {
